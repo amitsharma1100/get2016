@@ -13,7 +13,7 @@ class QuickSort {
 		int arr[]=algorithm.sort(unsorted);
 		System.out.println("Sorted array :" + Arrays.toString(arr));
 	}
-
+/*check input validations*/
 	int[] sort(int[] numbers) {
 		if (numbers == null || numbers.length == 0) {
 			return input;
@@ -23,7 +23,8 @@ class QuickSort {
 		quickSort(0, length - 1);
 		return input;
 	}
-
+	
+/*sorts the array */
 	private void quickSort(int low, int high) {
 		int i = low;
 		int j = high;
@@ -50,6 +51,7 @@ class QuickSort {
 		}
 	}
 
+	/*swap two numbers*/
 	private void swap(int i, int j) {
 		int temp = input[i];
 		input[i] = input[j];

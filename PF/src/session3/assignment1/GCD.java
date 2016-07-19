@@ -12,6 +12,8 @@ public class GCD {
 	}
 
 	int gcd(int x, int y) {
+		
+		//check for greater number
 		if(y>x)
 		{
 			int temp=x;
@@ -19,9 +21,12 @@ public class GCD {
 			y=temp;
 		}
 		try {
+			//check if the divisor is zero
 			if (y == 0) {
 				throw new ArithmeticException();
 			}
+			
+			//if y is a multiple of x return y
 			if ((x % y) == 0) {
 				return y;
 			} else {

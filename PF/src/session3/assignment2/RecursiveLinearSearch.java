@@ -15,10 +15,12 @@ public class RecursiveLinearSearch {
 		{
 			return false;
 		}
+		//check if the first element is equal to the key
 		if(input[0]==key)
 		{
 			return true;
 		}
+		//if not then call the same function with input starting from the next index
 		else
 		{
 			int inputLength=input.length;

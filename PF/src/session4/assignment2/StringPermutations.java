@@ -10,13 +10,15 @@ public class StringPermutations {
 	public static void main(String[] args)
 	{
 		outputList=new ArrayList<String>();
-		new StringPermutations().getPermutations("AAAD");
+		new StringPermutations().getPermutations("ABC");
 		for(int index=0;index<outputList.size();index++)
 		{
 			System.out.println("from list    "+outputList.get(index));
 		}
 	}
 
+	
+	
 	void getPermutations(String input)
 	{
 		if(outputList.contains(input))
@@ -34,7 +36,6 @@ public class StringPermutations {
 			String firstPart=input.substring(0,index);
 			String lastPart=input.substring(index,inputLength-1);
 			combination=firstPart+lastCharacter+lastPart;
-			//System.out.println("string  :"+combination);
 			new StringPermutations().getPermutations(combination);			
 		}
 		
