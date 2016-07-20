@@ -13,14 +13,14 @@ public class Matrix {
 	 * @param size
 	 *            (int) denotes the size of the matrix
 	 */
-	void initializeMatrixDimensions(int rows, int columns) {
+private	void initializeMatrixDimensions(int rows, int columns) {
 		this.rows = rows;
 		this.columns = columns;
 		this.matrixArray = new int[this.rows][this.columns];
 	}
 
 	/* adds the elements in the matrix */
-	boolean addELements(int input, int rowIndex, int columnIndex) {
+private	boolean addELements(int input, int rowIndex, int columnIndex) {
 		// null matrix check
 		if (this.matrixArray == null || rowIndex > this.rows
 				|| columnIndex > this.columns) {
@@ -32,7 +32,7 @@ public class Matrix {
 
 	}
 
-	int[][] show() {
+private	int[][] show() {
 		if (this.matrixArray == null) {
 			return null;
 		} else {
@@ -41,7 +41,7 @@ public class Matrix {
 	}
 
 	/* performs the transpose of the matrix */
-	int[][] transpose() {
+private	int[][] transpose() {
 		int transpose[][] = new int[this.columns][this.rows];
 		if (this.matrixArray == null) {
 			return null;
@@ -60,7 +60,7 @@ public class Matrix {
 		return transpose;
 	}
 
-	int[][] multiplyMatrix(int[][] matrix1, int[][] matrix2) {
+private	int[][] multiplyMatrix(int[][] matrix1, int[][] matrix2) {
 		int matrix1Rows = matrix1.length;
 		int matrix1Columns = matrix1[0].length;
 		int matrix2Rows = matrix2.length;
