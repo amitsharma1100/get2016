@@ -1,2 +1,0 @@
-Participant 1,3,2,5.
-Participant 2,5,5,5.
