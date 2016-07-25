@@ -18,7 +18,7 @@ System.out.println("------------------------------------------------------------
 		// sort employees array using Comparator by Name
 		Arrays.sort(questionsArray, Questions.TextComparator);
 		System.out
-				.println("Employee  list sorted by Name:\n" + Arrays.toString(questionsArray));
+				.println("Questions list sorted by text:\n" + Arrays.toString(questionsArray));
 	}
 
 }
