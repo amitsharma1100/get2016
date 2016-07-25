@@ -2,6 +2,7 @@ package session3.assignment1;
 
 public class Validations {
 
+	//game board dimensions
 	private static final int ROWS = 3;
 	private final int COLUMNS = 3;
 
@@ -13,6 +14,7 @@ public class Validations {
 		return COLUMNS;
 	}
 
+	/*returns true for a valid move */
 	public boolean isMoveValid(int row, int column, String[][] state) {
 		boolean status = true;
 
@@ -24,7 +26,7 @@ public class Validations {
 
 		return status;
 	}
-
+/*checks if the symbol entered by the user is valid or not*/
 	public boolean isSymbolValid(String symbol) {
 		boolean status = false;
 		if (symbol.equalsIgnoreCase("X") || symbol.equalsIgnoreCase("0")) {
@@ -33,6 +35,10 @@ public class Validations {
 		return status;
 	}
 
+	/*returns the result after each move
+	 the result can be 'continue' if the game has either no winner or not ended
+	 it can be 'win' if one of the player wins
+	 it can be 'gameover if no player wins'*/
 	public String getResult(String[][] state) {
 
 		if (isGameOver(state).equalsIgnoreCase("yes")) {
@@ -49,6 +55,7 @@ public class Validations {
 		return result;
 	}
 
+	/*checks the validity of a move in each row*/
 	public String checkRow(String[][] state) {
 		String result = "";
 		for (int rowIndex = 0; rowIndex < ROWS; rowIndex++) {
@@ -72,6 +79,7 @@ public class Validations {
 
 	}
 
+	/*checks the validity of a move in each column*/
 	public String checkColumn(String[][] state) {
 		String result = "";
 		for (int columnIndex = 0; columnIndex < COLUMNS; columnIndex++) {
@@ -94,6 +102,7 @@ public class Validations {
 		return result;
 	}
 
+	/*checks the validity of a move in left diagonal*/
 	public String checkLeftDiagonal(String[][] state) {
 		String result = "";
 
@@ -115,7 +124,7 @@ public class Validations {
 
 		return result;
 	}
-
+	/*checks the validity of a move in right diagonal*/
 	public String checkRightDiagonal(String[][] state) {
 		String result = "";
 
@@ -138,6 +147,7 @@ public class Validations {
 		return result;
 	}
 
+	/*check if the game is over*/
 	public String isGameOver(String[][] state) {
 		String status = "yes";
 		outerloop: for (int rowIndex = 0; rowIndex < ROWS; rowIndex++) {

@@ -3,61 +3,62 @@ package session3.assignment1;
 import java.util.Scanner;
 
 public class Player {
-	
+
+	private static Scanner scanner;
 	private Symbols symbols;
-	
+
 	public Symbols getSymbols() {
 		return symbols;
 	}
+
 	public void setSymbols(Symbols symbols) {
 		this.symbols = symbols;
 	}
-	public Player()
-	{
-		this.symbols=new Symbols();
+
+	public Player() {
+		this.symbols = new Symbols();
+		scanner = new Scanner(System.in);
 	}
-	public void setSymbol()
-	{
-		//this.symbols.setSymbol(symbol);
+
+	/* sets symbol for player 1 */
+	public void setSymbol() {
 		System.out.println("Player 1 ,choose your symbol....'X' or '0'");
-		Scanner scanner=new Scanner(System.in);
-		String symbol1=scanner.next();
-		
-		Validations validations=new Validations();
-		if(validations.isSymbolValid(symbol1))
-		{
+		scanner = new Scanner(System.in);
+		String symbol1 = scanner.next();
+
+		Validations validations = new Validations();
+		if (validations.isSymbolValid(symbol1)) {
 			this.symbols.setSymbol(symbol1);
-		}
-		else
-		{
+		} else {
 			System.out.println("Player 1,please enter a valid symbol");
 			this.setSymbol();
 		}
 	}
 
-	public void setSymbol(String symbol)
-	{
+	public void setSymbol(String symbol) {
 		this.symbols.setSymbol(symbol);
 	}
 
-	public void getMove(String playerName,String[][] state,Player player)
-	{
-		Scanner scanner=new Scanner(System.in);
-		System.out.println(playerName+" enter the row");
-		int row=scanner.nextInt();
-		System.out.println(playerName+" enter the column");
-		int column=scanner.nextInt();
-		Validations validations=new Validations();
-		if(!validations.isMoveValid(row, column, state))
-		{
-			System.out.println(playerName+" enter a valid move");
-			getMove(playerName, state,player);
+	/*take input from the user for the move*/
+	public void getMove(String playerName, String[][] state, Player player) {
+		System.out.println(playerName + " enter the row");
+		int row = scanner.nextInt();
+		System.out.println(playerName + " enter the column");
+		int column = scanner.nextInt();
+		Validations validations = new Validations();
+		if (!validations.isMoveValid(row, column, state)) {
+			System.out.println(playerName + " enter a valid move");
+			getMove(playerName, state, player);
+		} else {
+			state[row - 1][column - 1] = player.getSymbols().getSymbol();
+
 		}
-		else
-		{
-				state[row-1][column-1]=player.getSymbols().getSymbol();
-			
-		}
+
 	}
-	 
+
+	/*free up the resources*/
+	public void freeResources() {
+		scanner.close();
+	}
+
 }
