@@ -1,13 +1,23 @@
-package session1.assignmentt2;
+package session1.assignment2;
 
-public class Digits extends Buttons{
-	
-	private void setLabel(String id)
-	{
-		
+public class Digits extends Keys {
+
+	private static int[] validDigitLabels;
+
+	public static int[] getValidDigitLabels() {
+		return validDigitLabels;
 	}
-private String getLabel()
-{
-	return "";
-}
+
+	public static void setValidDigitLabels(int[] validDigitLabels) {
+		Digits.validDigitLabels = validDigitLabels;
+	}
+
+	public Digits() {
+
+	}
+
+	public Digits(String label) {
+		super(label);
+	}
+
 }
