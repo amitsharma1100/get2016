@@ -39,12 +39,41 @@ public class Player {
 		this.symbols.setSymbol(symbol);
 	}
 
-	/*take input from the user for the move*/
+	/* take input from the user for the move */
 	public void getMove(String playerName, String[][] state, Player player) {
-		System.out.println(playerName + " enter the row");
-		int row = scanner.nextInt();
-		System.out.println(playerName + " enter the column");
-		int column = scanner.nextInt();
+		boolean toContinueForRow=true;
+		boolean toContinueForColumn=true;
+		int row = 0;
+		int column = 0;
+		while(toContinueForRow)
+		{
+			System.out.println(playerName + " enter the row");
+			String input = scanner.next();
+			if (isRowColumnValid(input)) {
+				row = Integer.parseInt(input);
+				toContinueForRow=false;
+			} 
+			else{
+				System.out.println("Enter a correct row");
+			}
+			
+		}
+	
+		
+		while(toContinueForColumn)
+		{
+			System.out.println(playerName + " enter the column");
+			String input = scanner.next();
+			if (isRowColumnValid(input)) {
+				column = Integer.parseInt(input);
+				toContinueForColumn=false;
+			} 
+			else{
+				System.out.println("Enter a correct column");
+			}
+			
+		}
+		
 		Validations validations = new Validations();
 		if (!validations.isMoveValid(row, column, state)) {
 			System.out.println(playerName + " enter a valid move");
@@ -56,7 +85,21 @@ public class Player {
 
 	}
 
-	/*free up the resources*/
+	/*checks if the row number and column entered by the user is valid or not*/
+	public boolean isRowColumnValid(String input) {
+		boolean status = true;
+		if (input.length() > 1) {
+			status = false;
+		} else {
+			int temp = input.codePointAt(0);
+			if (temp < 47 || temp > 51) {
+				status = false;
+			}
+		}
+		return status;
+	}
+
+	/* free up the resources */
 	public void freeResources() {
 		scanner.close();
 	}
