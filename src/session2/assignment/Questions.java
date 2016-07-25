@@ -2,7 +2,7 @@ package session2.assignment2;
 
 import java.util.Comparator;
 
-public class Questions implements Comparable<Questions>,Comparator<Questions>{
+public class Questions implements Comparable<Questions>{
 	private String question;
 	private String typeOfQuestion;
 	private String options;
@@ -40,11 +40,7 @@ public class Questions implements Comparable<Questions>,Comparator<Questions>{
             return q1.getQuestion().compareTo(q2.getQuestion());
         }
     };
-	@Override
-	public int compare(Questions o1, Questions o2) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
 	@Override
 	public int compareTo(Questions o) {
 		// TODO Auto-generated method stub
