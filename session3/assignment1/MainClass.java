@@ -6,14 +6,13 @@ public class MainClass {
 	public static void main(String[] args) {
 
 		//create 2 players
-		Player player1=new Player();
-		Player player2=new Player();
-		
+		Player player=new Player();
+			
 		//assign symbol for player1
-		player1.setSymbol();
-		String symbol1=player1.getSymbols().getSymbol();
+		player.setSymbol();
+		String symbol1=player.getSymbols().getSymbol();
 		
-		//assign sysmbol to player 2
+		//assign symbol to computer
 		String symbol2="";
 		Validations validations=new Validations();
 		Display display=new Display();
@@ -25,17 +24,18 @@ public class MainClass {
 		{
 			symbol2="X";
 		}
-		player2.setSymbol(symbol2);
+		Computer computer=new Computer();
+		computer.setSymbol(symbol2);
 		
 		//begin game and continue until game gets over or one of the player wins
 		String status="continue";
 		while(status.equalsIgnoreCase("continue"))
 		{
-			//ask player 1 to make a move
-			player1.getMove("player1",display.getState(),player1);
+			//ask player to make a move
+			player.getMove(display.getState());
 			
 			//display the move if it is a valid move
-			display.diplayState();
+			display.diplayState("Player 1");
 			
 			//check what the result is after player 1 makes a valid move
 			status=validations.getResult(display.getState());
@@ -44,10 +44,10 @@ public class MainClass {
 			if(status.equalsIgnoreCase("continue"))
 			{
 				//ask player 2 to make a move
-				player2.getMove("player2",display.getState(),player2);
+				computer.getComputerMove(display.getState());
 				
 				//display the move if it is a valid move
-				display.diplayState();
+				display.diplayState(computer.getPLAYER_NAME());
 				
 				//check what the result is after player 2 makes a valid move
 				status=validations.getResult(display.getState());
@@ -55,7 +55,7 @@ public class MainClass {
 				//if the result is win then player 2 wins
 				if(status.equalsIgnoreCase("win"))
 				{
-					System.out.println("*****************Player 2 Wins******************");
+					System.out.println("*****************Computer Wins******************");
 				}
 			}
 			
@@ -68,7 +68,7 @@ public class MainClass {
 			//when the result is gameover
 			else if(status.equalsIgnoreCase("gameover"))
 					{
-				System.out.println("Sorry Noone wins....Gameover");
+				System.out.println("Sorry No One wins....Gameover");
 					}
 		}
 		

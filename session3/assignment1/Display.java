@@ -27,8 +27,9 @@ public class Display {
 	}
 	
 	/*display the game state*/
-	public void diplayState()
+	public void diplayState(String player)
 	{
+		System.out.println("****After "+player+" move****\n");
 		for(int row=0;row<3;row++)
 		{
 			for(int column=0;column<3;column++)

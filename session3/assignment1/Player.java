@@ -40,14 +40,14 @@ public class Player {
 	}
 
 	/* take input from the user for the move */
-	public void getMove(String playerName, String[][] state, Player player) {
+	public void getMove(String[][] state) {
 		boolean toContinueForRow=true;
 		boolean toContinueForColumn=true;
 		int row = 0;
 		int column = 0;
 		while(toContinueForRow)
 		{
-			System.out.println(playerName + " enter the row");
+			System.out.println("Player enter the row");
 			String input = scanner.next();
 			if (isRowColumnValid(input)) {
 				row = Integer.parseInt(input);
@@ -62,7 +62,7 @@ public class Player {
 		
 		while(toContinueForColumn)
 		{
-			System.out.println(playerName + " enter the column");
+			System.out.println("Player enter the column");
 			String input = scanner.next();
 			if (isRowColumnValid(input)) {
 				column = Integer.parseInt(input);
@@ -76,10 +76,10 @@ public class Player {
 		
 		Validations validations = new Validations();
 		if (!validations.isMoveValid(row, column, state)) {
-			System.out.println(playerName + " enter a valid move");
-			getMove(playerName, state, player);
+			System.out.println("Player enter a valid move");
+			getMove(state);
 		} else {
-			state[row - 1][column - 1] = player.getSymbols().getSymbol();
+			state[row - 1][column - 1] = getSymbols().getSymbol();
 
 		}
 
