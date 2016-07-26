@@ -14,11 +14,11 @@ public class Stack {
 
 	public Stack()
 	{
-		this.menu=new Menu[10];
+		Stack.menu=new Menu[10];
 		Stack.pointer=-1;
 		for(int index=0;index<10;index++)
 		{
-			menu[index]=new Menu();
+			Stack.menu[index]=new Menu();
 		}
 	}
 

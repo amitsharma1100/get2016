@@ -6,9 +6,21 @@ public class UserInteractor {
 	
 	public static void getUserInput(Menu menu,String menuLabel)
 	{
-		Scanner scanner=new Scanner(System.in);
-		System.out.println("Enter the no of menu items for "+menuLabel);
-		int totalMenuItems=scanner.nextInt();
+		boolean toContinue=false;
+		int totalMenuItems=0;
+        String input="";
+        Scanner scanner=new Scanner(System.in);
+		while(!toContinue)
+		{
+			System.out.println("Enter the no of menu items for "+menuLabel);
+			input=scanner.next();
+			toContinue=UserInteractor.isInputValid(input);
+			if(!toContinue)
+			{
+				System.out.println("Please enter a valid choice");
+			}
+		}
+		totalMenuItems=Integer.parseInt(input);
 		for(int index=0;index<totalMenuItems;index++)
 		{
 			System.out.println("Enter the name for menuitem "+(index+1)+" for "+menuLabel);
@@ -36,6 +48,17 @@ public class UserInteractor {
 		menu.getMenuItems().add(menuBack);
 		
 		
+	}
+	
+	public static boolean isInputValid(String input)
+	{
+		boolean status=true;
+		if(input.length()>1 || input.codePointAt(0)<48 || input.codePointAt(0)>57)
+		{
+			status=false;
+		}
+		
+		return status;
 	}
 
 }
