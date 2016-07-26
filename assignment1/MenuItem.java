@@ -1,12 +1,26 @@
 package session5.assignment1;
 
+/**
+ * 
+ * @author amit
+ *
+ */
 public class MenuItem {
 
+	//text of the input string
 	private String label;
+	
+	//type of the input string
 	private int type;
+	
+	//a menu item can have a sub menu 
 	Menu menu;
 	
-	
+	/**
+	 * 
+	 * @param label- text of the menu item
+	 * @param type -type of the menu item can be ---MENU_TYPE or BACK_TYPE or NON_MENU_TYPE
+	 */
 	public MenuItem(String label, int type) {
 		this.label = label;
 		this.type = type;
