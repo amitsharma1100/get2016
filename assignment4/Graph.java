@@ -1,4 +1,4 @@
-package session4.aassignment1;
+package session4.assignment1;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +41,8 @@ public class Graph {
 			if(Graph.graphNodes.get(index).getProfile().name.equalsIgnoreCase(name))
 			{
 				toBeReturned=index;
+				System.out.println("Returning:"+index);
+				break;
 			}
 		}
 		return toBeReturned;
@@ -102,11 +104,39 @@ public class Graph {
 			String updatedPlace=scanner.next();
 			node.getProfile().setName(updatedName);
 			node.getProfile().setPlace(updatedPlace);
-			Graph.graphNodes.add(status, node);
+			Graph.graphNodes.set(status, node);
 			System.out.println("******Updated details are*************");
 			DisplayGraph.displaySingleNode(node);
 		}
 		return toBeReturned;
-	
 	}
+	public static String mutualFriends(String friend1,String friend2)
+	{
+		String output="";
+		int status1=Graph.searchByNameEdit(friend1);
+		int status2=Graph.searchByNameEdit(friend2);
+		if(status1==-1 || status2==-1)
+		{
+			return "";
+		}
+		else
+		{
+			
+			int[] temp1=AdjacencyMatrix.adjacencyMatrix[status1];
+			int totalColumns1=temp1.length;
+			int[] temp2=AdjacencyMatrix.adjacencyMatrix[status2];
+			for(int colIndex=0;colIndex<totalColumns1;colIndex++)
+			{
+				if(temp1[colIndex]==1 && temp2[colIndex]==1)
+				{
+					output+=Graph.graphNodes.get(colIndex).getProfile().getName()+"\n";
+				}
+			}
+			
+			return output;
+			
+			
+		}
+	}
+
 }

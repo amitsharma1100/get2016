@@ -1,4 +1,4 @@
-package session4.aassignment1;
+package session4.assignment1;
 
 import java.util.List;
 import java.util.Scanner;
@@ -48,7 +48,7 @@ public class DisplayGraph {
 		Scanner scanner =new Scanner(System.in);
 		while(true)
 		{
-			System.out.println("\n\n**********Please choose************ \n\n:\n1. Find if A is friend of B\n2. Search By Name\n3. Display The Network\n4. Delete a profile\n5. Edit Profile\n6. Exit");
+			System.out.println("\n\n**********Please choose************ \n\n1. Find if A is friend of B\n2. Search By Name\n3. Display The Network\n4. Delete a profile\n5. Edit Profile\n6. Find Mutual Friends\n7. Exit");
 			
 			int choice=scanner.nextInt();
 			switch (choice) {
@@ -98,7 +98,21 @@ public class DisplayGraph {
 			       String profileToBeEdited=scanner.next();
 			       Graph.editProfile(profileToBeEdited);
 			       break;
-			case 6:System.exit(-1);
+			case 6:System.out.println("Enter the name of first user");
+			       String friend1=scanner.next();
+			       System.out.println("Enter the name of second user");
+			       String friend2=scanner.next();
+			       String mutuals=Graph.mutualFriends(friend1, friend2);
+			       if(mutuals.equalsIgnoreCase(""))
+			       {
+			    	   System.out.println("Sorry No mutuals found");
+			       }
+			       else
+			       {
+			    	   System.out.println("Mutuals of "+friend1+" and "+friend2+"\n\n"+mutuals);
+			       }
+			       break;
+			case 7:System.exit(-1);
 			default:System.out.println("Enter a valid choice");
 				break;
 			}

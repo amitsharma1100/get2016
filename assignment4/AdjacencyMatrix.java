@@ -1,4 +1,4 @@
-package session4.aassignment1;
+package session4.assignment1;
 
 public class AdjacencyMatrix {
 	 static int[][] adjacencyMatrix;

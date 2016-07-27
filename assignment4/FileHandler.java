@@ -1,4 +1,4 @@
-package session4.aassignment1;
+package session4.assignment1;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -11,7 +11,7 @@ public class FileHandler {
 
 		BufferedReader bufferedReader=null;
 		try {
-			 bufferedReader= new BufferedReader(new FileReader("C:\\Users\\admin\\workspace\\OOPS\\src\\session4\\aassignment1\\nodes.txt"));
+			 bufferedReader= new BufferedReader(new FileReader("C:\\Users\\Amit\\Documents\\Android Workspace\\OOPS\\src\\session4\\assignment1\\nodes.txt"));
 			String currentLine = "";
 			String[] commaSeparatedValues;
 			Graph graph=new Graph();
@@ -60,7 +60,7 @@ public class FileHandler {
 	{
 		BufferedReader bufferedReader=null;
 		try {
-			 bufferedReader= new BufferedReader(new FileReader("C:\\Users\\admin\\workspace\\OOPS\\src\\session4\\aassignment1\\connections.txt"));
+			 bufferedReader= new BufferedReader(new FileReader("C:\\Users\\Amit\\Documents\\Android Workspace\\OOPS\\src\\session4\\assignment1\\connections.txt"));
 			 String currentLine = "";
 			 String[] commaSeparatedValues;
 			  AdjacencyMatrix adjacencyMatrix=new AdjacencyMatrix(FileHandler.getTotalLinesCount());
@@ -91,7 +91,7 @@ public class FileHandler {
 		BufferedReader bufferedReader=null;
 		 int count=0;
 		try {
-			 bufferedReader= new BufferedReader(new FileReader("C:\\Users\\admin\\workspace\\OOPS\\src\\session4\\aassignment1\\nodes.txt"));
+			 bufferedReader= new BufferedReader(new FileReader("C:\\Users\\Amit\\Documents\\Android Workspace\\OOPS\\src\\session4\\assignment1\\nodes.txt"));
 			 while ((bufferedReader.readLine()) != null) {
 				 count++;
 			 }
