@@ -11,5 +11,5 @@ public abstract class MyAbstractList<P> {
 	public abstract void clear();
 	public abstract MyAbstractList<P> reverse();
 	public abstract MyAbstractList<P> sort();
-	public abstract MyAbstractList<P> concate(MyAbstractList<P> list2);
+	public abstract MyArrayList<P> concate(MyArrayList<P> list2);
 }

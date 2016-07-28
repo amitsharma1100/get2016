@@ -128,13 +128,10 @@ public class MyArrayList<P> extends MyAbstractList<P> {
 		return temp;
 	}
 
-	@Override
-	public MyAbstractList<P> sort() {
-		return null;
-	}
+	
 
 	@Override
-	public MyAbstractList<P> concate(MyAbstractList<P> list2) {
+	public MyArrayList<P> concate(MyArrayList<P> list2) {
 		int lengthOfList1=size();
 		int lengthOfList2=list2.size();
 		int totalSize=lengthOfList1+lengthOfList2;
@@ -156,4 +153,12 @@ public class MyArrayList<P> extends MyAbstractList<P> {
 		}
 		return temp;
 	}
+
+	@Override
+	public MyAbstractList<P> sort() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
 }

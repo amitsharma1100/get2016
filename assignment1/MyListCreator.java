@@ -22,7 +22,7 @@ public class MyListCreator {
 		mylist.remove("5");
 		MyArrayList< String> myList2=new MyArrayList<String>();
 		myList2=mylist.reverse();
-		myList2=concate(myList2);
+		myList2=mylist.concate(myList2);
 		System.out.println("size2  "+myList2.size());
 		for(int i=0;i<myList2.size();i++)
 	  {
