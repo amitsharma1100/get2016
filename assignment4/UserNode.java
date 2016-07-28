@@ -1,5 +1,10 @@
 package session4.assignment1;
 
+/**
+ * 
+ * @author Amit
+ *
+ */
 public class UserNode extends Node {
 
 	private UserProfile userProfile;

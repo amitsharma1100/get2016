@@ -1,20 +1,24 @@
 package session4.assignment1;
 
+/**
+ * 
+ * @author Amit
+ *
+ */
 public class Node {
 
-	 int NodeNumber;
-	 int type;
-	 Profile profile;
-	
+	int NodeNumber;
+	int type;
+	Profile profile;
 
 	public Node() {
-		this.profile=new Profile();
+		this.profile = new Profile();
 	}
 
 	public Node(int NodeNumber, int type) {
 		this.NodeNumber = NodeNumber;
 		this.type = type;
-		this.profile=new Profile();
+		this.profile = new Profile();
 	}
 
 	public int getNodeNumber() {
@@ -41,4 +45,24 @@ public class Node {
 		this.profile = profile;
 	}
 
+	/**
+	 * 
+	 * @param node--compares this node with the node for which the method is called 
+	 * @return
+	 */
+	public boolean equals(Node node) {
+		boolean status = false;
+		{
+			if (this.NodeNumber == node.NodeNumber
+					&& this.type == node.type
+					&& this.getProfile().getName()
+							.equals(node.getProfile().getName())
+					&& this.getProfile().place.equals(node.getProfile()
+							.getPlace())) {
+				status = true;
+			}
+		}
+		return status;
+
+	}
 }

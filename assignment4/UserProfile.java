@@ -1,5 +1,10 @@
 package session4.assignment1;
 
+/**
+ * 
+ * @author Amit
+ *
+ */
 public class UserProfile extends Profile{
 	
 	private int age;

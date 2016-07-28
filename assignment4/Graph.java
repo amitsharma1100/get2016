@@ -4,8 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * 
+ * @author Amit
+ *
+ */
 public class Graph {
 
+	// list containing the total nodes in the graph
 	static List<Node> graphNodes;
 
 	public Graph() {
@@ -20,6 +26,11 @@ public class Graph {
 		Graph.graphNodes = graphNodes;
 	}
 	
+	/**
+	 * 
+	 * @param name- the key to be searched in the graph nodes
+	 * @return the node if successfully found else returns null
+	 */
 	public static  Node searchByName(String name)
 	{
 		int totalNodes=Graph.graphNodes.size();
@@ -32,6 +43,11 @@ public class Graph {
 		}
 		return null;
 	}
+	/**
+	 * 
+	 * @param name-- searches for this name in the graph 
+	 * @return returns -1 if the node is not found else returns the index of the node
+	 */
 	public static  int searchByNameEdit(String name)
 	{
 		int toBeReturned=-1;
@@ -41,7 +57,6 @@ public class Graph {
 			if(Graph.graphNodes.get(index).getProfile().name.equalsIgnoreCase(name))
 			{
 				toBeReturned=index;
-				System.out.println("Returning:"+index);
 				break;
 			}
 		}
@@ -82,22 +97,31 @@ public class Graph {
 		}
 		else
 		{
+			System.out.println("size before"+Graph.graphNodes.size());
 			Graph.graphNodes.remove(node);
+			System.out.println("size after"+Graph.graphNodes.size());
 			status=true;
 		}
 		return status;
 	}
+	/**
+	 * 
+	 * @param name--edits the profile of the name specified
+	 * @return true if the profile is successfully updated else returns false
+	 */
 	public static boolean editProfile(String name)
 	{
 		Node node=Graph.searchByName(name);
+		Scanner scanner=null;
 		boolean toBeReturned=false;
+		try{
 		int status=Graph.searchByNameEdit(name);
 		if(status!=-1)
 		{
 			toBeReturned=true;
 			System.out.println("******Previous details are*************");
 			DisplayGraph.displaySingleNode(node);
-			Scanner scanner=new Scanner(System.in);
+			scanner=new Scanner(System.in);
 			System.out.println("Enter the name");
 			String updatedName=scanner.next();
 			System.out.println("Enter the place");
@@ -108,8 +132,28 @@ public class Graph {
 			System.out.println("******Updated details are*************");
 			DisplayGraph.displaySingleNode(node);
 		}
+	
+		}
+		catch(Exception exception)
+		{
+			System.out.println("Sorry something went wrong "+exception.getMessage());
+		}
+		finally
+		{
+			if(scanner!=null)
+			{
+				scanner.close();
+			}
+		}
 		return toBeReturned;
-	}
+}
+	/**
+	 * 
+	 * @param friend1 
+	 * @param friend2
+	 * @return the list of mutual friends if any
+	 * 
+	 */
 	public static String mutualFriends(String friend1,String friend2)
 	{
 		String output="";
@@ -132,10 +176,28 @@ public class Graph {
 					output+=Graph.graphNodes.get(colIndex).getProfile().getName()+"\n";
 				}
 			}
-			
 			return output;
-			
-			
+		}
+	}
+	
+	/**
+	 * counts the total number of friends for all the nodes 
+	 */
+	public static void setFriendCount()
+	{
+		int[][] adj=AdjacencyMatrix.adjacencyMatrix;
+		int size=adj.length;
+		for(int rowIindex=0;rowIindex<size;rowIindex++)
+		{
+			for(int colIndex=0;colIndex<size;colIndex++)
+			{
+				if(adj[rowIindex][colIndex]==1 && Graph.graphNodes.get(rowIindex).type==Constants.USER_NODE)
+				{
+					UserNode userNode=(UserNode)Graph.graphNodes.get(rowIindex);
+					userNode.getUserProfile().setFriendsCount((userNode.getUserProfile().getFriendsCount()+1));
+				    Graph.graphNodes.set(rowIindex, userNode);
+				}
+			}
 		}
 	}
 

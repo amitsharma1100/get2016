@@ -1,11 +1,21 @@
 package session4.assignment1;
 
+/**
+ * 
+ * @author amit
+ *
+ */
 public class AdjacencyMatrix {
-	 static int[][] adjacencyMatrix;
+	
+	// static array to keep neighbours' details
+	static int[][] adjacencyMatrix;
 
+	// default  constructor
 	public AdjacencyMatrix() {
-		
+
 	}
+
+	// initialize the size of the adjacency matrix
 	public AdjacencyMatrix(int size) {
 		AdjacencyMatrix.adjacencyMatrix = new int[size][size];
 	}
@@ -17,17 +27,5 @@ public class AdjacencyMatrix {
 	public void setAdjacencyMatrix(int[][] adjacencyMatrix) {
 		AdjacencyMatrix.adjacencyMatrix = adjacencyMatrix;
 	}
-	public void display()
-	{
-		int size=AdjacencyMatrix.adjacencyMatrix.length;
-		for(int rowIndex=0;rowIndex<size;rowIndex++)
-		{
-			for(int colIndex=0;colIndex<size;colIndex++)
-			{
-				System.out.print(adjacencyMatrix[rowIndex][colIndex]+" ");
-			}
-			System.out.println("");
-		}
-		
-	}
+
 }
