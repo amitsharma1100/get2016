@@ -1,0 +1,169 @@
+#headdiv {
+	background-color: #003cb3;
+	height: 40px;
+	display: block;
+}
+
+#sitename {
+	display: inline-block;
+	float: left;
+	width: 20%;
+	height: 100%;
+}
+
+#links {
+	display: inline-block;
+	float: right;
+	width: 15%;
+	padding: .3%;
+}
+
+#links label {
+	display: inline-block;
+}
+
+#sitename label {
+	display: inline-block;
+	float: left;
+	color: white;
+	padding-left: 2.5%;
+	padding-top: 2.5%;
+}
+
+#links label a {
+	color: white;
+	width: 10%;
+}
+
+#lowerhalf {
+	width: 100%;
+	height: 280px;
+	background-color: #1a75ff;
+	color: white;
+	text-align: center;
+	padding-top: 110px;
+}
+
+#bigboldtext {
+	border: 3px solid white;
+	width: 40%;
+	height: 110px;
+	text-align: center;
+	margin-left: 430px;
+	padding: 10px;
+}
+
+#bigboldtext h1 {
+	color: white;
+	padding: 20px;
+}
+
+#getstarted button {
+	width: 150px;
+	height: 30px;
+	color: #1a75ff;
+	background-color: white;
+	border-radius: 10px;
+}
+
+#middlebox {
+	text-align: center;
+	padding: 15px;
+}
+
+#foursectiondiv {
+	display: inline-block;
+	float: left;
+	width: 100%;
+}
+
+.column {
+	width: 22%;
+	height: 150px;
+	display: inline;
+	float: left;
+	padding: 10px;
+	text-align: left;
+}
+
+.column h3 {
+	color: #1a75ff;
+	text-align: center;
+	display: inline;
+}
+
+#descriptiontab {
+	background-color: #2D3E50;
+	height: 200px;
+	width: 100%;
+	display: inline-block;
+	color: white;
+}
+
+#imagesdiv, #details {
+	display: inline;
+	float: left;
+	padding: 40px;
+	margin-left: 120px;
+	text-align: left;
+}
+
+#lowerbox {
+	display: block;
+	width: 100%;
+}
+
+#lowerbox h1 {
+	text-align: center;
+	width: 100%;
+}
+
+#formdiv {
+	padding: 10px;
+	float: left;
+	display: inline-block;
+	width: 45%;
+}
+
+label, input {
+	display: block;
+	padding: 3px;
+	font-weight: 900;
+}
+
+#formdiv button {
+	margin-top: 10px;
+	padding: 8px;
+	background-color: #1a75ff;
+	border-radius: 10px;
+	color: white;
+	width: 80px;
+	padding: 8px;
+}
+
+#infodiv {
+	display: inline-block;
+	float: left;
+	width: 45%;
+}
+
+#contactdiv, #moreinformation {
+	float: left;
+}
+
+#foot {
+	display: inline-block;
+	float: left;
+	width: 100%;
+	height: 20px;
+	background-color: #003cb3;
+	color: white;
+	padding: 4px;
+	text-align: center;
+	height: 20px;
+}
+
+.fa.fa-rocket, .fa.fa-mobile, .fa.fa-windows, .fa.fa-check-square-o {
+	color: #1a75ff;
+	padding: 10px;
+}
