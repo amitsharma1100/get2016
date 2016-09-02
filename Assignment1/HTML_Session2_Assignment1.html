@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Assignment 1</title>
+<link rel="stylesheet" type="text/css"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css"
+	href="HTML_Session2_Assignment1.css">
+<script type="text/javascript">
+	function phonenumber()  
+	{  
+		alert("hello")
+		var inputtxt=document.getElementById("phno").value();
+		alert('in function ' +inputtxt);
+	  var phoneno = /^\d{10}$/;  
+	  if((inputtxt.value.match(phoneno))  
+	        {  
+	      return true;  
+	      alert("correct")
+	        }  
+	      else  
+	        {  
+	        alert("incorrect");  
+	        return false;  
+	        }  
+	}  
+	</script>
+</head>
+<body>
+	<div id="container">
+		<header>
+			<h3>Contact Us Today!</h3>
+		</header>
+		<article>
+			<div id="formdiv">
+				<form action="" method="post">
+					<div class="newrow">
+						<label>First Name</label>
+						<div class="rightpart">
+							<span class="fa fa-user"></span> <input type="text"
+								placeholder="First Name" pattern="[A-Za-z]{2,20}"
+								required="required">
+						</div>
+					</div>
+					<div class="newrow">
+						<label>Last Name</label>
+						<div class="rightpart">
+							<span class="fa fa-user"></span> <input type="text"
+								placeholder="Last Name" pattern="[A-Za-z]{2,20}"
+								required="required">
+						</div>
+					</div>
+					<div class="newrow">
+						<label>Email</label>
+						<div class="rightpart">
+							<span class="fa fa-envelope"></span> <input type="email"
+								placeholder="E-mail Address" required="required">
+						</div>
+					</div>
+					<div class="newrow">
+						<label>Phone No</label>
+						<div class="rightpart">
+							<span class="fa fa-phone"></span> <input id="phno" type="number"
+								placeholder="(845)555-1212" pattern="[0-9]{10}" maxlength="10"
+								max="99999999" min="0000000001" required="required">
+						</div>
+					</div>
+					<div class="newrow">
+						<label>Address</label>
+						<div class="rightpart">
+							<span class="fa fa-home"></span> <input type="text"
+								placeholder="Address" required="required">
+						</div>
+					</div>
+					<div class="newrow">
+						<label>City</label>
+						<div class="rightpart">
+							<span class="fa fa-home"></span> <input type="text"
+								placeholder="City" pattern="[A-Za-z]{2,100}" required="required">
+						</div>
+					</div>
+					<div class="newrow">
+						<label>State</label>
+						<div class="rightpart">
+							<span class="fa fa-list-ol"></span> <select id="state">
+								<option>Arunachal Pradesh</option>
+								<option>Andhra Pradesh</option>
+								<option>Punjab</option>
+								<option>Rajasthan</option>
+								<option>Gujrat</option>
+								<option>Maharashtra</option>
+							</select>
+						</div>
+					</div>
+					<div class="newrow">
+						<label>Zipcode</label>
+						<div class="rightpart">
+							<span class="fa fa-home"></span> <input type="number"
+								placeholder="Zipcode" required="required">
+						</div>
+					</div>
+					<div class="newrow">
+						<label>Website Or Domain Name</label>
+						<div class="rightpart">
+							<span class="fa fa-globe"></span> <input type="text"
+								placeholder="Website or domain ame" pattern="[A-Za-z]{2,50}"
+								required="required">
+						</div>
+					</div>
+					<div class="newrow">
+						<label>Do you have hosting?</label>
+						<div id="radioboxes">
+							<input type="radio" name="domain" value="yes" required="required">Yes
+							<input type="radio" name="domain" value="no">No
+						</div>
+					</div>
+					<div class="newrow">
+						<label>Project Description</label>
+						<div class="rightpart">
+							<span class="fa fa-pencil"></span>
+							<textarea rows="5" cols="45" placeholder="Project Description"
+								required="required" maxlength="200"></textarea>
+						</div>
+					</div>
+					<div id="button">
+						<button>
+							Send<span id="sendicon" class="fa fa-send"></span>
+						</button>
+					</div>
+				</form>
+			</div>
+		</article>
+	</div>
+</body>
+</html>
