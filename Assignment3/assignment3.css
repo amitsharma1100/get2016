@@ -1,0 +1,19 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+header {
+	margin-left: 30%;
+	padding: 2%;
+}
+
+#container {
+	width: 10%;
+	height: 5px;
+	background-color: #2c80d3;
+	color: white;
+	margin-left: 32%;
+	padding: 2%;
+	font-weight: 900;
+}
