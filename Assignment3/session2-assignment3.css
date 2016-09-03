@@ -1,0 +1,22 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+body{
+	padding: 3%;
+}
+
+header {
+	margin-left: 30%;
+}
+
+#result {
+	margin-top:1%;
+	width: 10%;
+	padding: 1%;
+	background: #2c80d3;
+	margin-left: 30%;
+	color:white;
+	font-weight: 900;
+}
