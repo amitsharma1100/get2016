@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Assignment 2</title>
+<script type="text/javascript" src="js/session3-assignment2.js"></script>
+<link rel="stylesheet" type="text/css"	href="css/session3-assignment2.css">
+</head>
+<body onload="funValueChanged();">
+<header><h1>Choose option from below</h1></header>
+	<article>
+	    <h3>Gender </h3><br />
+		<input type="radio"  name="gender" value="Male" checked="checked" onClick="funValueChanged();"/>Male
+		<input type="radio"  name="gender" value="Female" onClick="funValueChanged();"/>Female
+		<hr>
+		<br />
+		   <h3>Marital Status </h3><br />
+		<input type="radio"  name="maritalStatus" value="Married" checked="checked" onClick="funValueChanged();"/>Married
+		<input type="radio"  name="maritalStatus" value="Single" onClick="funValueChanged();"/>Single
+		<hr>
+		<br />
+		<div id="result"></div>
+	</article>
+</body>
+</html>
