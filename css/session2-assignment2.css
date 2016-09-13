@@ -1,0 +1,9 @@
+#modal-buttons, #modal-panel, #modal-grid, #modal-progressbar,
+	#modal-pagination {
+	width: 50%;
+	background-color: white;
+	border-radius: 6px;
+	padding: 15px;
+	display: none;
+}
+
