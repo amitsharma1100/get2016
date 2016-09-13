@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Assignment 3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet" href="css/custombox.min.css">
+<link rel="stylesheet" href="css/session2-assignment2.css">
+<link rel="stylesheet" href="css/session1-assignment1.css">
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/custombox.min.js"></script>
+
+<script src="js/session2-assignment2.js"></script>
+<script src="js/session2-assignment3.js"></script>
+</head>
+<body>
+	<div class="container">
+		<nav class="navbar navbar-default">
+
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Metacube</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active" title="Home"><a href="#"><i
+							class="glyphicon glyphicon-home visible-sm-inline-block"></i> <span
+							class="hidden-sm">Home</span></a></li>
+					<li title="About"><a href="#"> <i
+							class="glyphicon glyphicon-user visible-sm-inline-block"></i><span
+							class="hidden-sm">About</span></a></li>
+					<li title="Contact Us"><a href="#"> <i
+							class="glyphicon glyphicon-earphone visible-sm-inline-block"></i><span
+							class="hidden-sm">Contact us</span></a></li>
+					<li title="Movie Forms"><a href="#"> <i
+							class="glyphicon glyphicon-pencil visible-sm-inline-block"></i><span
+							class="hidden-sm">Movie Forms</span></a></li>
+					<li id="movie-reviews" title="Movie Reviews"><a href="#">
+							<i class="glyphicon glyphicon-list-alt visible-sm-inline-block"></i><span
+							class="hidden-sm">Movie Reviews</span>
+					</a></li>
+					<li title="Logout"><a href="#"> <i
+							class="glyphicon glyphicon-off visible-sm-inline-block"></i><span
+							class="hidden-sm">Logout</span></a></li>
+					<li title="CSS" class="dropdown"><a href="#"
+						class="dropdown-toggle" data-toggle="dropdown" role="button"
+						aria-haspopup="true" aria-expanded="false"> <i
+							class="glyphicon glyphicon-chevron-down visible-sm-inline-block"></i><span
+							class="hidden-sm">CSS</span></a>
+						<ul class="dropdown-menu">
+							<li id="button"><a href="#">Buttons</a></li>
+							<li id="panel"><a href="#">Panel</a></li>
+							<li id="grid"><a href="#">Grid</a></li>
+							<li id="link"><a href="#">Link</a></li>
+							<li id="pagination"><a href="#">Pagination</a></li>
+							<li id="progressbar"><a href="#">Progress Bar</a></li>
+						</ul></li>
+				</ul>
+				<form class="navbar-form navbar-right">
+					<div class="input-group add-on">
+						<input class="form-control" placeholder="Search this site"
+							name="srch-term" id="srch-term" type="text">
+						<div class="input-group-btn">
+							<button class="btn btn-default" type="submit">
+								<i class="glyphicon glyphicon-search"></i>
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</nav>
+		<div id="modal-buttons" class="modal-demo">
+			<button type="button" class="close" onclick="Custombox.close();">
+				<span>&times;</span>
+			</button>
+			<h3 class="title">Buttons</h3>
+			<br /> <br /> <br />
+			<hr>
+			<div class="row">
+				<div class="col-lg-12 ">
+					<button type="button" class="btn btn-default">Cancel</button>
+					<button type="button" class="btn btn-primary">Validate</button>
+					<button type="button" class="btn btn-success">Submit</button>
+					<button type="button" class="btn btn-danger">Delete</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="modal-panel" class="modal-demo">
+			<button type="button" class="close" onclick="Custombox.close();">
+				<span>&times;</span>
+			</button>
+			<h3 class="title">Panel</h3>
+			<br /> <br /> <br />
+			<hr>
+			<div class="panel panel-primary">
+				<div class="panel-heading">Panel Heading</div>
+				<div class="panel-body">Panel Content goes here</div>
+			</div>
+
+		</div>
+
+		<div id="modal-grid" class="modal-demo">
+			<button type="button" class="close" onclick="Custombox.close();">
+				<span>&times;</span>
+			</button>
+			<h3 class="title">Grid</h3>
+			<br /> <br /> <br />
+			<hr>
+			<div class="row">
+				<div class="col-xs-6 col-sm-3" style="background-color: lavender;">
+					Column 1<br>
+
+				</div>
+				<div class="col-xs-6 col-sm-3"
+					style="background-color: lavenderblush;">Column 2</div>
+
+				<div class="clearfix visible-xs"></div>
+				<div class="col-xs-6 col-sm-3" style="background-color: lightcyan;">Column
+					3</div>
+				<div class="col-xs-6 col-sm-3" style="background-color: lightgray;">Column
+					4</div>
+			</div>
+		</div>
+
+		<div id="modal-progressbar" class="modal-demo">
+			<button type="button" class="close" onclick="Custombox.close();">
+				<span>&times;</span>
+			</button>
+			<h3 class="title">Progress bar</h3>
+			<br /> <br /> <br />
+			<hr>
+			<div class="progress">
+				<div class="progress-bar progress-bar-success" role="progressbar"
+					aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+					style="width: 40%">40% Complete (success)</div>
+			</div>
+			<div class="progress">
+				<div class="progress-bar progress-bar-info" role="progressbar"
+					aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"
+					style="width: 50%">50% Complete (info)</div>
+			</div>
+			<div class="progress">
+				<div class="progress-bar progress-bar-warning" role="progressbar"
+					aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+					style="width: 60%">60% Complete (warning)</div>
+			</div>
+			<div class="progress">
+				<div class="progress-bar progress-bar-danger" role="progressbar"
+					aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
+					style="width: 70%">70% Complete (danger)</div>
+			</div>
+		</div>
+		<div id="modal-pagination" class="modal-demo">
+			<button type="button" class="close" onclick="Custombox.close();">
+				<span>&times;</span>
+			</button>
+			<h3 class="title">Pagination</h3>
+			<br /> <br /> <br />
+			<hr>
+			<ul class="pagination">
+				<li><a href="#">1</a></li>
+				<li class="active"><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">5</a></li>
+			</ul>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2>Sample Form</h2>
+			</div>
+		</div>
+		<form role="form">
+			<div class="form-group">
+				<div class="row">
+					<div class="col-lg-1 col-md-2 col-sm-3">
+						<label for="movie_title">Movie Title</label>
+					</div>
+					<div class="col-lg-5 col-md-4 col-sm-9">
+						<input type="text" class="form-control" id="movie_title">
+					</div>
+					<div class="col-lg-1 col-md-2 col-sm-3 ">
+						<label for="genre">Genre</label>
+					</div>
+					<div class="col-lg-5 col-md-4 col-sm-9">
+						<select class="form-control">
+							<option>Choose a genre</option>
+							<option>Sample Genre 1</option>
+							<option>Sample Genre 2</option>
+							<option>Sample Genre 3</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-1 col-md-2 col-sm-3">
+						<label for="director">Director</label>
+					</div>
+					<div class="col-lg-2 col-md-4 col-sm-9">
+						<input type="text" class="form-control" id="director">
+					</div>
+					<div class="col-lg-1 col-md-2 col-sm-3">
+						<label for="writer">Writer</label>
+					</div>
+					<div class="col-lg-2 col-md-4 col-sm-9">
+						<input type="text" class="form-control" id="writer">
+					</div>
+					<div class="col-lg-1 col-md-2 col-sm-3">
+						<label for="producer">Producer</label>
+					</div>
+					<div class="col-lg-2 col-md-4 col-sm-9">
+						<input type="text" class="form-control" id="producer">
+					</div>
+					<div class="col-lg-1 col-md-2 col-sm-3">
+						<label for="composer">Composer</label>
+					</div>
+					<div class="col-lg-2 col-md-4 col-sm-9">
+						<input type="text" class="form-control" id="composer">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-1 col-md-2 col-sm-3">
+						<label for="website">Website</label>
+					</div>
+					<div class="col-lg-5 col-md-4 col-sm-9">
+						<input type="text" class="form-control" id="website">
+					</div>
+					<div class="col-lg-1 col-md-2 col-sm-3">
+						<label for="trailer">YouTube Trailer</label>
+					</div>
+					<div class="col-lg-5 col-md-4 col-sm-9">
+						<input type="text" class="form-control" id="trailer">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<label for="review">Review</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<textarea class="form-control" rows="3"></textarea>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-3 text-left col-md-3 col-sm-12">
+						<label for="rating">Rating</label>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-3">
+						<label class="radio-inline text-danger"><input
+							type="radio" name="optradio"><strong>Terrible</strong></label>
+
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-3">
+						<label class="radio-inline text-info"><input type="radio"
+							name="optradio"><strong>Watchable</strong></label>
+
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-3">
+						<label class="radio-inline"><input type="radio"
+							name="optradio"><strong>Best Ever</strong></label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-md-3"></div>
+					<div class="col-lg-4 col-md-6 col-sm-6">
+						<button type="button" class="btn btn-default">Cancel</button>
+						<button type="button" class="btn btn-primary">Validate</button>
+						<button type="button" class="btn btn-success">Submit</button>
+						<button type="button" class="btn btn-danger">Delete</button>
+					</div>
+				</div>
+			</div>
+		</form>
+		<div class="container hide" id="table_div">
+			<table id="movieTable" class="table table-hover table-bordered">
+				<tr></tr>
+			</table>
+			<div class="text-center">
+				<ul class="pagination " id="page">
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
