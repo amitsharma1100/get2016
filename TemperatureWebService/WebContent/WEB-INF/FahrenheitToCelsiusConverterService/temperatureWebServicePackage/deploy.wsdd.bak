@@ -1,0 +1,29 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from FahrenheitToCelsiusConverterService WSDL service -->
+
+  <service name="FahrenheitToCelsiusConverter" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://temperatureWebServicePackage"/>
+      <parameter name="wsdlServiceElement" value="FahrenheitToCelsiusConverterService"/>
+      <parameter name="schemaQualified" value="http://temperatureWebServicePackage"/>
+      <parameter name="wsdlServicePort" value="FahrenheitToCelsiusConverter"/>
+      <parameter name="className" value="temperatureWebServicePackage.FahrenheitToCelsiusConverterSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="FahrenheitToCelsiusConverter"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="convertFahrenheitToCelsius" qname="operNS:convertFahrenheitToCelsius" xmlns:operNS="http://temperatureWebServicePackage" returnQName="retNS:convertFahrenheitToCelsiusReturn" xmlns:retNS="http://temperatureWebServicePackage" returnType="rtns:float" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:fahrenheit" xmlns:pns="http://temperatureWebServicePackage" type="tns:float" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="convertFahrenheitToCelsius"/>
+
+  </service>
+</deployment>
