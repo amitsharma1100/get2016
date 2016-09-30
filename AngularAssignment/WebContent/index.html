@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+   <head>
+      <meta charset="utf-8">
+      <title>My HTML App</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet"
+         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+      <link rel="stylesheet" href="css/custombox.min.css">
+      <link rel="stylesheet" href="css/app.css" charset="utf-8">
+   </head>
+   <!-- body starts -->
+   <body ng-controller="myCtrl">
+      <div class="container">
+         <h1>Customers</h1>
+         <div class="row">
+            <div class="col-sm-7">
+               <div class="navbar">
+                  <ul class="nav navbar-nav">
+                     <li ng-click="changeView($event)"><a id="grid"><span
+                        class="glyphicon glyphicon-th-large"></span> Grid View</a></li>
+                     <li ng-click="changeView($event)"><a id="list"><span
+                        class="glyphicon glyphicon-th-list"></span> List View</a></li>
+                     <li ng-click="addCustomerPopUp()"><a><span class="glyphicon glyphicon-plus"></span> Add Customer</a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-sm-5 width_adjust">
+               <div class="form-inline">
+                  <div class="form-group navbar-right">
+                     <label for="filter" class="form-control-label">Filter :</label> <input
+                        type='text' class='form-control' id="filterText"
+                        data-ng-model="filterbox.fullName">
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Card creation starts -->
+         <div class="row">
+            <div ng-repeat="customer in customers.customerVO.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) | filter : filterbox">
+               <div class="{{changeViewClass}} ">
+                  <div class="panel panel-primary panel-square {{cancelClick}} "
+                     name="{{customer.id}}" id="panel-{{customer.id}}">
+                     <div class="panel-heading panel-square">
+                        <div class="row">
+                           <div class="col-lg-8">{{customer.firstName +" "+customer.lastName}}</div>
+                           <div class="pull-right">
+                              <button name={{customer.id}} class="close cancel-button" ng-click="cancelBtn($event)">&times;</button>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="panel-body">
+                        <div class="row">
+                           <div class="col-lg-6 ">
+                              <img src="img/{{customer.gender}}.jpg">
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="row">
+                                 <label>{{customer.city}}</label>
+                              </div>
+                              <div class="row">
+                                 <label>{{customer.country}}</label>
+                              </div>
+                              <div class="row">
+                                 <label class="text-primary">{{customer.orders}} Orders</label>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Card creation ends -->
+         <!-- Pagination tab begins -->
+         <div class="row">
+            <ul uib-pagination total-items="totalItems" ng-model="currentPage"
+               max-size="maxSize" class="pagination-sm" boundary-links="true"
+               num-pages="numPages"></ul>
+         </div>
+         <!-- Pagination tab ends -->
+         <!-- Add customer popup begins -->
+         <div class="modal-demo modal-lg" id="add-customer-modal">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close"
+                     data-dismiss="add-customer-modal">&times;</button>
+                  <h2 class="text-primary">Enter the details</h2>
+               </div>
+               <div class="modal-body">
+                  <form role="form" action="javascript:addCustomer();">
+                     <div class="form-group">
+                        <div class="row">
+                           <div class="col-lg-7">
+                              <label for="first_name">First Name</label>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <input type="text" class="form-control" id="first_name"
+                                 required>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <label for="last_name">Last Name</label>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <input type="text" class="form-control" id="last_name" required>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-3">
+                              <label for="gender">Gender</label>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-4">
+                              <label class="radio-inline text-primary"><input
+                                 type="radio" value="M" name="gender"><strong>Male</strong></label>
+                           </div>
+                           <div class="col-lg-4">
+                              <label class="radio-inline text-primary"><input
+                                 type="radio" name="gender" value="F"><strong>Female</strong></label>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <label for="email">Email</label>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <input type="email" class="form-control" id="email" required>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <label for="city">City</label>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <input type="text" class="form-control" id="city" required>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <label for="country">Country</label>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <input type="text" class="form-control" id="country" required>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <label for="orders">Orders</label>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <input type="number" class="form-control" id="orders" min="0"
+                                 required>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <input type="submit" class="btn btn-primary" value="Add">
+                        </div>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+         <!-- Add customer popup ends -->
+      </div>
+      <footer>
+         <!-- include js -->
+         <script src="js/jquery.min.js"></script>
+         <script src="js/bootstrap.min.js"></script>
+         <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+         <script src="js/custombox.min.js"></script>
+         <script src="js/ui-bootstrap-tpls-2.1.4.min.js" charset="utf-8"></script>
+         <script src="js/app.js" charset="utf-8"></script>
+      </footer>
+   </body>
+   <!-- body ends -->
+</html>
