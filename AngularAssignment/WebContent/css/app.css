@@ -1,0 +1,25 @@
+.panel-square {
+	border-radius: 0px;
+}
+
+.cancel-button {
+	color: #fff;
+}
+
+#add-customer-modal {
+
+	 background-color: white;
+	border-radius: 6px;
+	padding: 15px; 
+	display: none;
+}
+
+.light-blue-text {
+	color: #5f54f1;
+}
+
+@media ( min-width : 768px) {
+	.col-sm-5.width_adjust {
+		width: 40.4%;
+	}
+}
