@@ -1,0 +1,6 @@
+Assignment 1:
+------------------------
+Install and connect to MYSQL
+Analysis of Normalization techniques (along with an example) as discussed during Session.
+Draw ER Diagram for Library Information System discussed during Session.
+-----------------------------------------------------------------------------------------
