@@ -1,0 +1,52 @@
+#div1, #div2, #div3, #div4, #div5 {
+	height: 100px;
+	width: 100px;
+	margin-left: 47%; border : 2px solid black;
+	-webkit-transition: -webkit-transform .8s ease-in-out;
+	transition: transform .8s ease-in-out;
+	text-align: center;
+	padding: 15px;
+	border: 2px solid black;
+}
+
+#div1 {
+	background-color: #80ff80;
+}
+
+#div1:hover {
+	-webkit-transform: rotate(360deg);
+	transform: rotate(360deg);
+	background-color: #66c2ff;
+}
+
+#div2 {
+	background-color: #ff6666;
+}
+
+#div2:hover {
+	-webkit-transform: scale(1.2, 1.5);
+	transform: scale(1.2, 1.5);
+	background-color: #80ff80;
+}
+
+#div3 {
+	background-color: #ffff33;
+}
+
+#div3:hover {
+	-webkit-transform: skew(25deg);
+	background-color: #ff6666;
+}
+
+#div4 {
+	background-color: #66c2ff;
+}
+
+#div4:hover {
+	-webkit-transform: translate(50px, 50px);
+	background-color: #ffff33;
+}
+
+#div5{
+	background-color: #9999ff;
+}
