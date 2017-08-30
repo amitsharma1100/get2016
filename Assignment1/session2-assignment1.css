@@ -1,0 +1,38 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	color: black;
+	font-size: 20px;
+	font-family: "Courier New Italic";
+}
+
+header {
+	margin-left: 35%;
+	padding: 2.5%;
+}
+
+article {
+	margin-left: 33%;
+	width: 20%;
+	height: 20%;
+	background-color: #87f8b4;
+	padding: 1%;
+	display: block;
+}
+
+article label {
+	display: inline-block;
+	width: 100%;
+	margin-left: 25%;
+	text-align: left;
+	font-weight: 500;
+	font-family: "Arial Italic";
+}
+
+article label.hello {
+	color: red;
+}
+
+article label.random {
+	color: #d5b8aa;
+}

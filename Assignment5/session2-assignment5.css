@@ -1,0 +1,52 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	color: black;
+	font-size: 20px;
+	font-family: "Courier New Italic";
+}
+
+header {
+	margin-left: 35%;
+	padding: 2.5%;
+}
+
+article {
+	width: 90%;
+	border: 2px solid black;
+	margin-left: 2.5%;
+	padding: 3.5%;
+	background-color: #0af5ae;
+}
+
+#modal {
+	width: 600px;
+	background-color: white;
+	border-radius: 6px;
+	text-align: justify;
+	padding: 15px;
+	display: none;
+}
+
+#wrapper {
+	padding: 2%;
+	width: 100%;
+	display: inline;
+}
+
+.title {
+	text-align: center;
+	width: 90%;
+	display: inline;
+	float: left;
+}
+
+input {
+	padding: .5%;
+	color: #0af5ae;
+	background-color: #fff;
+	border-radius: 8px;
+	width: 10%;
+	display: inline-block;
+	float: left;
+}
