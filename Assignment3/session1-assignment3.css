@@ -1,0 +1,105 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	color: black;
+	font-size: 20px;
+	font-family: "Courier New Italic";
+}
+
+header {
+	margin-left: 40%;
+	padding: 2.5%;
+}
+
+article {
+	width: 90%;
+}
+
+div {
+	height: 100px;
+	width: 100%;
+	margin: 20px;
+	display: inline-block;
+}
+
+hr {
+	width: 104%;
+	margin-left: 3.5%;
+}
+
+button {
+	display: block;
+	margin-left: 40%;
+	width: 12%;
+	padding: .2%;
+	border-radius: 10px;
+	box-shadow: 10px 10px 5px #888888;
+}
+
+div#spanDiv, div#imageDiv, div#myDiv, div#boxErrorDiv, div#paraDiv {
+	width: 100%;
+	height: 20%;
+	border: 1px solid gray;
+	padding: 2%;
+	background-color: #87f8b4;
+	margin-left: 3.5%;
+}
+
+div#spanDiv span, div#myDiv span {
+	display: inline-block;
+	width: 100%;
+	margin-left: 38%;
+	text-align: left;
+	font-weight: 500;
+	font-family: "Arial Italic";
+}
+
+div#spanDiv span.message {
+	color: red;
+}
+
+div#imageDiv div#imageContainer {
+	margin-left: 25%;
+}
+
+div#imageDiv img {
+	width: 100px;
+	margin: 5px;
+}
+
+div#myDiv input {
+	margin-left: 38%;
+	text-align: left;
+	padding: .1%;
+}
+
+div#myDiv span.info {
+	color: blue;
+}
+
+div#boxErrorDiv div {
+	margin-left: 10%;
+}
+
+div#boxErrorDiv div.box {
+	background-color: aqua;
+	width: 80%;
+}
+
+div#boxErrorDiv div.error {
+	border-color: green;
+	border-style: groove;
+	width: 80%;
+}
+
+div#paraDiv p {
+	margin-left: 40%;
+	text-align: left;
+	font-weight: 900;
+	width: 12%;
+	padding: .2%;
+}
+
+div#paraDiv p.box {
+	color: green;
+}
