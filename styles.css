@@ -1,0 +1,45 @@
+body {
+	margin: 15px;
+	background-color:  #e6f9ff;
+}
+#container{
+	display:inline-block;
+	margin-left:5px;
+	background-color: #fff; 
+	width: 100%;
+	padding: 10px;
+	
+}
+.myimages {
+	border-color: black;
+	color: red;
+}
+
+#myprofile {
+	float:left;
+	display:inline-block;
+	border: 2px solid blue;
+	padding: 20px;
+	color: #1ac6ff;
+	width:97%;
+	background-color: #e6f9ff;
+	text-align: center;
+}
+
+#mainbody {
+	display: inline-block;
+	float: left;
+	width: 100%;
+	padding: 3px;
+	margin: 5px;
+}
+
+#photodiv {
+	width: 20%;
+	float: left;
+}
+
+#infotab {
+	width: 80%;
+	float: left;
+}
